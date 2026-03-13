@@ -1,0 +1,199 @@
+/* New Hero Layout Styles */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left !important;
+    /* Override centered text */
+    align-items: flex-start !important;
+    /* Override flex align */
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-badge {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+}
+
+.hero-title {
+    margin-top: -2rem !important;
+}
+
+.cta-section {
+    justify-content: flex-start !important;
+}
+
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    margin-top: -4rem !important;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-2xl);
+    transform: rotate(2deg);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 968px) {
+    .hero-container {
+        display: flex;
+        /* Ensure flex context */
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3.5rem;
+    }
+
+    /* FLATTEN the text container so its children become flex items of .hero-container */
+    .hero-content {
+        display: contents;
+    }
+
+    /* ORDERING - Mobile First Flow */
+
+
+    .hero-title {
+        order: 2;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-image-wrapper {
+        order: 3;
+        width: 100%;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-subtitle {
+        order: 4;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .cta-section {
+        order: 5;
+        justify-content: center !important;
+        margin-bottom: 3rem !important;
+    }
+
+    /* Image Styling for Mobile */
+    .hero-image {
+        max-width: 85%;
+        /* Slightly restrained width */
+        transform: rotate(3deg);
+        /* Dynamic tilt */
+    }
+}
+
+/* For Who Section Styles */
+.for-who-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.for-who-grid {
+    flex: 1;
+    margin-bottom: 0 !important;
+    /* Override grid behavior */
+}
+
+.for-who-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-image {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    transform: rotate(-2deg);
+}
+
+@media (max-width: 968px) {
+    .for-who-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .for-who-image-wrapper {
+        order: -1;
+        /* Image on top on mobile */
+        width: 80%;
+    }
+}
+
+/* Top Bar Marquee Effect - Seamless Loop */
+.top-bar-content {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    max-width: 100%;
+}
+
+.marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    width: max-content;
+    /* Ensure track fits all items */
+    animation: marquee 35s linear infinite;
+}
+
+.marquee-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-right: 4rem;
+    /* Gap between text repeats */
+    color: #ffffff;
+    /* Explicitly ensure visibility against gradient */
+}
+
+/* Move 50% left (one full copy of the text) to create seamless loop */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .marquee-track {
+        animation-duration: 25s;
+        /* Faster on mobile */
+    }
+
+    .marquee-item {
+        font-size: 0.85rem;
+        padding-right: 2rem;
+    }
+}

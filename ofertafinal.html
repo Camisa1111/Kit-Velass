@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>Absolut Letzte Chance – 70% Rabatt | Kerzenakademie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="stylesheet" href="css/index.BtePxAs6.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    :root {
+      --primary:        #a67c52;
+      --primary-dark:   #8b5e3c;
+      --primary-light:  #c4956a;
+      --dark:           #2c1810;
+      --gray:           #6b5b4e;
+      --white:          #ffffff;
+      --green:          #4caf50;
+      --green-dark:     #388e3c;
+      --fire:           #e65c00;
+      --fire-dark:      #b34500;
+      --shadow-md:  0 4px 6px rgba(166,124,82,.1);
+      --shadow-lg:  0 10px 15px rgba(166,124,82,.15);
+      --shadow-xl:  0 20px 25px rgba(166,124,82,.2);
+      --shadow-2xl: 0 25px 50px rgba(166,124,82,.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f0e8;
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── Final warning bar ── */
+    .final-bar {
+      background: linear-gradient(135deg, #1a1a1a, #2c1810);
+      color: #fff;
+      text-align: center;
+      padding: 0.65rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--fire);
+    }
+    .final-bar .bar-timer {
+      color: #ffa040;
+      font-variant-numeric: tabular-nums;
+    }
+    .final-bar .bar-note {
+      opacity: 0.75;
+      font-weight: 400;
+      margin-left: 0.4rem;
+    }
+
+    /* ── Background ── */
+    .page-background {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.3;
+    }
+    .orb-1 { width: 650px; height: 650px; background: radial-gradient(circle, #d4a76b 0%, transparent 70%); top: -200px; left: -200px; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #e65c00 0%, transparent 70%); bottom: 100px; right: -150px; opacity: 0.15; }
+    .orb-3 { width: 450px; height: 450px; background: radial-gradient(circle, #f0d0a0 0%, transparent 70%); top: 40%; left: 50%; transform: translate(-50%,-50%); }
+
+    /* ── Layout ── */
+    .container { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+    /* ── Divider ── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--fire), var(--fire-dark));
+      border-radius: 2px;
+      margin: 1.2rem auto;
+    }
+
+    /* ── Hero ── */
+    .final-hero {
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    /* "Chapter" label above — feels like a closing chapter */
+    .chapter-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fire);
+      margin-bottom: 1.25rem;
+    }
+    .chapter-label::before,
+    .chapter-label::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--fire);
+      opacity: 0.5;
+    }
+
+    /* Main headline — two lines, maximum tension */
+    .final-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .final-title .fire-text {
+      background: linear-gradient(135deg, #e65c00, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Discount pill */
+    .discount-pill {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--fire), var(--fire-dark));
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      padding: 0.4rem 1.4rem;
+      border-radius: 100px;
+      letter-spacing: -0.01em;
+      margin: 1rem 0 1.5rem;
+      box-shadow: 0 8px 24px rgba(230,92,0,0.35);
+    }
+
+    .final-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.72;
+    }
+
+    /* "Confession box" — honest, direct, no manipulation language */
+    .confession-box {
+      background: rgba(44,24,16,0.04);
+      border: 1.5px solid rgba(44,24,16,0.12);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      text-align: left;
+      position: relative;
+    }
+    .confession-box::before {
+      content: '❝';
+      position: absolute;
+      top: -0.6rem;
+      left: 1.25rem;
+      font-size: 2rem;
+      color: var(--fire);
+      opacity: 0.5;
+      line-height: 1;
+    }
+    .confession-box p {
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.75;
+    }
+    .confession-box p + p { margin-top: 0.75rem; }
+    .confession-box strong { color: var(--fire-dark); }
+
+    /* ── Timer ── */
+    .timer-section { margin-bottom: 2.5rem; }
+    .timer-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fire);
+      margin-bottom: 0.7rem;
+    }
+    .timer-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .timer-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.6rem 0.9rem;
+      min-width: 62px;
+      border: 1px solid rgba(230,92,0,0.3);
+    }
+    .timer-block .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #ffa040;
+    }
+    .timer-block .lbl {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-top: 0.2rem;
+    }
+    .timer-sep { font-size: 1.8rem; font-weight: 700; color: var(--fire); line-height: 1; margin-bottom: 0.8rem; }
+
+    /* ── Price card ── */
+    .price-section { padding: 3rem 0 2rem; }
+    .price-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(230,92,0,0.15), var(--shadow-2xl);
+      border: 2px solid rgba(230,92,0,0.2);
+      overflow: hidden;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .price-card-header {
+      background: linear-gradient(135deg, #1a1a1a, #2c1810);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .price-card-header .badge-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffa040;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .price-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .price-body { padding: 2rem; text-align: center; }
+    .price-from-label {
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .price-chain {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .price-orig { font-size: 1.2rem; color: #ccc; text-decoration: line-through; }
+    .price-mid  { font-size: 1.2rem; color: #e08080; text-decoration: line-through; }
+    .price-arrow { font-size: 1.2rem; color: var(--fire); }
+    .price-final {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #e65c00, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin: 0.25rem 0;
+    }
+    .price-sub { font-size: 0.88rem; color: var(--gray); margin-top: 0.3rem; }
+    .price-saving {
+      display: inline-block;
+      background: rgba(230,92,0,0.1);
+      color: var(--fire-dark);
+      border: 1px solid rgba(230,92,0,0.3);
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.8rem;
+    }
+
+    /* ── CTA ── */
+    .btn-final-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.2rem;
+      border-radius: 14px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(76,175,80,0.4);
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+      animation: glowBtn 2.5s ease-in-out infinite;
+    }
+    .btn-final-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(76,175,80,0.55);
+    }
+    @keyframes glowBtn {
+      0%, 100% { box-shadow: 0 10px 28px rgba(76,175,80,0.4); }
+      50%       { box-shadow: 0 10px 44px rgba(76,175,80,0.7); }
+    }
+    .cta-subtext { font-size: 0.82rem; color: var(--gray); margin-top: 0.85rem; }
+
+    /* ── What they lose section ── */
+    .loss-section { padding: 3rem 0; }
+    .loss-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+    .loss-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-size: 0.97rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Two-column loss vs gain */
+    .loss-gain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .loss-card {
+      background: rgba(200,50,50,0.04);
+      border: 1.5px solid rgba(200,50,50,0.15);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+    .gain-card {
+      background: rgba(76,175,80,0.04);
+      border: 1.5px solid rgba(76,175,80,0.2);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+    .lg-header {
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .loss-card .lg-header { color: #c0392b; }
+    .gain-card .lg-header { color: #2e7d32; }
+    .lg-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--gray);
+    }
+    .lg-item:last-child { margin-bottom: 0; }
+    .lg-icon { flex-shrink: 0; margin-top: 0.05rem; font-size: 0.95rem; }
+
+    /* ── Testimonial strip (single, most powerful) ── */
+    .testimonial-strip { padding: 2rem 0 3rem; }
+    .testimonial-card-final {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(166,124,82,0.12);
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .t-stars { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .t-quote {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .t-name { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
+    .t-loc  { font-size: 0.8rem; color: var(--gray); }
+
+    /* ── Hard close section ── */
+    .hard-close {
+      background: linear-gradient(135deg, #1a1a1a, #2c1810);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin: 0 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hard-close::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(230,92,0,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hard-close h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.8rem;
+      line-height: 1.15;
+    }
+    .hard-close h2 em {
+      font-style: normal;
+      color: #ffa040;
+    }
+    .hard-close p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+    .hard-close .final-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1rem;
+    }
+
+    /* ── Guarantee seal ── */
+    .guarantee-section { padding: 0 0 3rem; }
+    .guarantee-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+      border: 1.5px solid rgba(76,175,80,0.2);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .guarantee-seal {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(76,175,80,0.3);
+      color: #fff;
+    }
+    .guarantee-seal .seal-days  { font-size: 1.25rem; font-weight: 800; line-height: 1; }
+    .guarantee-seal .seal-label { font-size: 0.45rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+    .guarantee-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .guarantee-text p  { font-size: 0.88rem; color: var(--gray); line-height: 1.55; }
+
+    /* ── Decline ── */
+    .decline-wrap { text-align: center; padding: 1rem 0 4rem; }
+    .decline-link {
+      font-size: 0.75rem;
+      color: #ccc;
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+    .decline-link:hover { color: #aaa; }
+
+    /* ── Progressive blur ── */
+    .progressive-blur {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%; height: 180px;
+      z-index: 999;
+      pointer-events: none;
+    }
+    .blur-layer { position: absolute; inset: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .final-title { font-size: 2rem; }
+      .price-final  { font-size: 3rem; }
+      .loss-gain-grid { grid-template-columns: 1fr; }
+      .hard-close { padding: 2rem 1.25rem; }
+      .guarantee-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    /* Mark this as the final offer — no more redirects after this */
+    sessionStorage.setItem('finalOfferSeen', 'true');
+    sessionStorage.setItem('exitOfferSeen',  'true');
+    window.__onFinalOffer = true;
+  </script>
+
+  <div class="page-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <!-- Final urgency bar -->
+  <div class="final-bar">
+    🔥 Letzte Chance — Angebot endet in:
+    <span class="bar-timer" id="bar-timer">09:59</span>
+    <span class="bar-note">— danach ist es weg. Für immer.</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="final-hero">
+    <div class="container">
+
+      <div class="chapter-label">🕯️ Absolut letzte Seite</div>
+
+      <h1 class="final-title">
+        Das ist unsere letzte<br>
+        Chance füreinander.<br>
+        <span class="fire-text">70% Rabatt — jetzt oder nie.</span>
+      </h1>
+
+      <div>
+        <div class="discount-pill">🔥 70% RABATT</div>
+      </div>
+
+      <p class="final-subtitle">
+        Sie haben zwei Angebote abgelehnt. Wir könnten einfach aufgeben.
+        Aber wir glauben an das, was Sie mit unserem Kurs aufbauen können —
+        deshalb machen wir dieses <strong>einmalige, endgültige Angebot</strong>.
+        Es gibt keine weitere Seite danach.
+      </p>
+
+      <div class="confession-box">
+        <p>
+          Wir wissen, dass Sie zögern. Vielleicht liegt es am Preis.
+          Vielleicht am Vertrauen. Vielleicht am Timing.
+          Was auch immer es ist — <strong>heute lösen wir es mit 70% Rabatt.</strong>
+        </p>
+        <p>
+          Das ist unser Maximum. Wir gehen nicht weiter runter.
+          Wenn Sie jetzt die Seite verlassen, ist das der reguläre Preis
+          beim nächsten Besuch. <strong>Diese Seite existiert für Sie allein.</strong>
+        </p>
+      </div>
+
+      <!-- Timer -->
+      <div class="timer-section">
+        <div class="timer-label">⚡ Dieses Angebot verfällt in</div>
+        <div class="timer-wrap">
+          <div class="timer-block">
+            <span class="num" id="t-min">09</span>
+            <span class="lbl">Min</span>
+          </div>
+          <div class="timer-sep">:</div>
+          <div class="timer-block">
+            <span class="num" id="t-sec">59</span>
+            <span class="lbl">Sek</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <a href="https://pay.hotmart.com/E103489708H?off=ro5ifmom" class="btn-final-cta" target="_blank" rel="noopener">
+        🔒 Jetzt für 70% weniger starten
+      </a>
+      <p class="cta-subtext">Sofortiger Zugang · Einmalzahlung · Lebenslanger Zugriff</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PRICE CARD
+  ══════════════════════════════════════════ -->
+  <section class="price-section">
+    <div class="container">
+      <div class="price-card">
+        <div class="price-card-header">
+          <div class="badge-text">🔥 Absolut letztes Angebot · Nur auf dieser Seite</div>
+          <h3>Kurs PRO + App + Alle Boni — Komplett</h3>
+        </div>
+        <div class="price-body">
+          <div class="price-from-label">Ihr Preisverlauf heute</div>
+          <div class="price-chain">
+            <span class="price-orig">Regulär</span>
+            <span class="price-arrow">→</span>
+            <span class="price-mid">−50%</span>
+            <span class="price-arrow">→</span>
+          </div>
+          <div class="price-final">8,10 €</div>
+          <div class="price-sub">Einmalzahlung · Lebenslanger Zugriff</div>
+          <div class="price-saving">🔥 Sie sparen 70% — einmalig, endgültig</div>
+
+          <div style="margin-top: 1.8rem;">
+            <a href="https://pay.hotmart.com/E103489708H?off=ro5ifmom" class="btn-final-cta" target="_blank" rel="noopener" style="font-size:1rem; padding: 0.95rem 1.8rem;">
+              🔒 Für 8,10 € jetzt sichern
+            </a>
+          </div>
+          <p style="font-size:0.75rem; color:#ccc; margin-top:0.7rem;">
+            Nach diesem Angebot gibt es keine weiteren Rabatte mehr.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       LOSS VS GAIN
+  ══════════════════════════════════════════ -->
+  <section class="loss-section">
+    <div class="container">
+
+      <h2 class="loss-title">Was passiert, wenn Sie Ja sagen — und wenn nicht</h2>
+      <p class="loss-subtitle">Eine ehrliche Gegenüberstellung. Sie entscheiden.</p>
+
+      <div class="loss-gain-grid">
+        <!-- Lose column -->
+        <div class="loss-card">
+          <div class="lg-header">✗ Wenn Sie ablehnen</div>
+          <div class="lg-item"><span class="lg-icon">💸</span>Sie zahlen weiterhin den vollen Preis beim nächsten Besuch.</div>
+          <div class="lg-item"><span class="lg-icon">⏳</span>Monate ohne System: Trial &amp; Error mit Rezepten auf eigene Faust.</div>
+          <div class="lg-item"><span class="lg-icon">📉</span>Kein Zertifikat, kein strukturierter Lernpfad, keine Community.</div>
+          <div class="lg-item"><span class="lg-icon">🚫</span>Dieses Angebot — 70% Rabatt — existiert nie wieder.</div>
+        </div>
+        <!-- Gain column -->
+        <div class="gain-card">
+          <div class="lg-header">✓ Wenn Sie Ja sagen</div>
+          <div class="lg-item"><span class="lg-icon">⚡</span>Sofortiger Zugang: heute noch mit dem ersten Video starten.</div>
+          <div class="lg-item"><span class="lg-icon">🕯️</span>In 7 Tagen halten Sie Ihre erste selbstgemachte Kerze in den Händen.</div>
+          <div class="lg-item"><span class="lg-icon">💰</span>In 21–30 Tagen die Chance auf erste Verkäufe mit bewährten Rezepten.</div>
+          <div class="lg-item"><span class="lg-icon">🏆</span>3 Zertifikate, App PRO und alle Boni — für den Preis eines Mittagessens.</div>
+        </div>
+      </div>
+
+      <!-- CTA mid-page -->
+      <div style="text-align:center; margin: 1rem 0 2rem;">
+        <a href="https://pay.hotmart.com/E103489708H?off=ro5ifmom" class="btn-final-cta" target="_blank" rel="noopener">
+          🔒 Jetzt für 70% weniger starten
+        </a>
+        <p class="cta-subtext">Sofortiger Zugang · Einmalzahlung · Lebenslanger Zugriff</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TESTIMONIAL (single, strongest)
+  ══════════════════════════════════════════ -->
+  <section class="testimonial-strip">
+    <div class="container">
+      <div class="testimonial-card-final">
+        <div class="t-stars">⭐⭐⭐⭐⭐</div>
+        <p class="t-quote">
+          "Ich habe gezögert und fast aufgehört. Heute bin ich froh,
+          dass ich Ja gesagt habe. Allein im letzten Monat habe ich
+          <strong>1.800 € mit handgefertigten Kerzen</strong> verdient —
+          von zu Hause aus, neben meiner Hauptarbeit."
+        </p>
+        <div class="t-name">Anna Becker</div>
+        <div class="t-loc">Dresden · Aktive Teilnehmerin</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       HARD CLOSE
+  ══════════════════════════════════════════ -->
+  <div class="container">
+    <div class="hard-close">
+      <h2>
+        Das ist die letzte Seite.<br>
+        <em>Es gibt keine vierte Chance.</em>
+      </h2>
+      <p>
+        Wir haben Ihnen drei Angebote gemacht. Das hier ist das letzte.
+        70% Rabatt ist das Äußerste, das wir tun können.
+        Entscheiden Sie jetzt — oder zahlen Sie später den vollen Preis.
+      </p>
+      <a href="https://pay.hotmart.com/E103489708H?off=ro5ifmom" class="btn-final-cta" target="_blank" rel="noopener" style="font-size:1.15rem; padding:1.2rem 2.6rem;">
+        🔒 Ja — Ich starte jetzt für 8,10 €
+      </a>
+      <p class="final-note">Sofortiger Zugang nach dem Kauf · 15-Tage-Garantie · Kein Abo</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       GUARANTEE
+  ══════════════════════════════════════════ -->
+  <section class="guarantee-section">
+    <div class="container">
+      <div class="guarantee-card">
+        <div class="guarantee-seal">
+          <div class="seal-days">15</div>
+          <div class="seal-label">Tage</div>
+          <div class="seal-label">Garantie</div>
+        </div>
+        <div class="guarantee-text">
+          <h4>🛡️ 15-Tage-Geld-zurück-Garantie</h4>
+          <p>
+            100% Rückerstattung ohne Fragen, ohne Bürokratie.
+            Sie riskieren absolut nichts — auch nicht bei 8,10 €.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DECLINE
+  ══════════════════════════════════════════ -->
+  <div class="decline-wrap">
+    <button class="decline-link" onclick="window.location.href='index-preview.html'">
+      Nein danke — ich verzichte auf den Kurs und zahle später den vollen Preis.
+    </button>
+  </div>
+
+  <!-- Progressive Blur -->
+  <div class="progressive-blur" id="prog-blur"></div>
+
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+  <script>
+    // ── Countdown: 10 minutes (shorter = higher urgency) ──
+    (function () {
+      var DURATION = 10 * 60;
+      var KEY = 'finalTimerEnd';
+
+      if (!sessionStorage.getItem(KEY)) {
+        sessionStorage.setItem(KEY, Date.now() + DURATION * 1000);
+      }
+
+      function tick() {
+        var remaining = Math.max(0, Math.floor((+sessionStorage.getItem(KEY) - Date.now()) / 1000));
+        var m = Math.floor(remaining / 60);
+        var s = remaining % 60;
+        var mm = String(m).padStart(2, '0');
+        var ss = String(s).padStart(2, '0');
+
+        var el = function(id) { return document.getElementById(id); };
+        if (el('t-min'))   el('t-min').textContent   = mm;
+        if (el('t-sec'))   el('t-sec').textContent   = ss;
+        if (el('bar-timer')) el('bar-timer').textContent = mm + ':' + ss;
+
+        if (remaining > 0) {
+          setTimeout(tick, 1000);
+        } else {
+          var bar = document.querySelector('.final-bar');
+          if (bar) {
+            bar.style.background = '#7a0000';
+            bar.innerHTML = '⛔ Das Angebot ist abgelaufen. <a href="index-preview.html" style="color:#ffa040;font-weight:700;">Zur Hauptseite →</a>';
+          }
+        }
+      }
+      tick();
+    })();
+
+    // ── Progressive Blur ──
+    (function () {
+      var blurValues = [0.25, 0.5, 1, 2, 4, 8, 16, 32];
+      var masks = [
+        'linear-gradient(to bottom, transparent 0%, black 12.5%, black 25%, transparent 37.5%)',
+        'linear-gradient(to bottom, transparent 12.5%, black 25%, black 37.5%, transparent 50%)',
+        'linear-gradient(to bottom, transparent 25%, black 37.5%, black 50%, transparent 62.5%)',
+        'linear-gradient(to bottom, transparent 37.5%, black 50%, black 62.5%, transparent 75%)',
+        'linear-gradient(to bottom, transparent 50%, black 62.5%, black 75%, transparent 87.5%)',
+        'linear-gradient(to bottom, transparent 62.5%, black 75%, black 87.5%, transparent 100%)',
+        'linear-gradient(to bottom, transparent 75%, black 87.5%, black 100%)',
+        'linear-gradient(to bottom, transparent 87.5%, black 100%)',
+      ];
+      var c = document.getElementById('prog-blur');
+      blurValues.forEach(function(blur, i) {
+        var l = document.createElement('div');
+        l.className = 'blur-layer';
+        l.style.backdropFilter = 'blur(' + blur + 'px)';
+        l.style.webkitBackdropFilter = 'blur(' + blur + 'px)';
+        l.style.maskImage = masks[i];
+        l.style.webkitMaskImage = masks[i];
+        c.appendChild(l);
+      });
+    })();
+  </script>
+
+</body>
+</html>

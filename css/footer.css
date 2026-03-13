@@ -1,0 +1,449 @@
+/* ========================================
+   FOOTER PROFISSIONAL - ESTILOS
+   ======================================== */
+
+.site-footer[data-astro-cid-footer] {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e8e8e8;
+  padding: 4rem 0 0;
+  margin-top: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer[data-astro-cid-footer]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+      #d4af37 0%,
+      #f4e4c1 25%,
+      #d4af37 50%,
+      #f4e4c1 75%,
+      #d4af37 100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.footer-container[data-astro-cid-footer] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ========================================
+   SEÇÃO PRINCIPAL DO FOOTER
+   ======================================== */
+
+.footer-main[data-astro-cid-footer] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column[data-astro-cid-footer] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Logo do Footer */
+.footer-logo[data-astro-cid-footer] {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo[data-astro-cid-footer] .logo-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+}
+
+.footer-logo[data-astro-cid-footer] h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.footer-description[data-astro-cid-footer] {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+/* Badges de Certificação */
+.footer-certifications[data-astro-cid-footer] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cert-badge[data-astro-cid-footer] {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d4af37;
+  transition: all 0.3s ease;
+}
+
+.cert-badge[data-astro-cid-footer]:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Títulos das Colunas */
+.footer-title[data-astro-cid-footer] {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-title[data-astro-cid-footer]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+/* Links do Footer */
+.footer-links[data-astro-cid-footer] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links[data-astro-cid-footer] li {
+  margin: 0;
+}
+
+.footer-links[data-astro-cid-footer] a {
+  color: #c0c0c0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-links[data-astro-cid-footer] a::before {
+  content: '→';
+  opacity: 0;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+  transform: translateX(-10px);
+}
+
+.footer-links[data-astro-cid-footer] a:hover {
+  color: #d4af37;
+  padding-left: 1.5rem;
+}
+
+.footer-links[data-astro-cid-footer] a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   SEÇÃO DE AVISOS LEGAIS
+   ======================================== */
+
+.footer-legal-notice[data-astro-cid-footer] {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-box[data-astro-cid-footer] {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.legal-title[data-astro-cid-footer] {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legal-content[data-astro-cid-footer] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.legal-content[data-astro-cid-footer] p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.legal-content[data-astro-cid-footer] strong {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* ========================================
+   SEÇÃO DE SEGURANÇA
+   ======================================== */
+
+.footer-security[data-astro-cid-footer] {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.security-badges[data-astro-cid-footer] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.security-item[data-astro-cid-footer] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #c0c0c0;
+  transition: all 0.3s ease;
+}
+
+.security-icon[data-astro-cid-footer] {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+}
+
+.security-item[data-astro-cid-footer]:hover {
+  color: #d4af37;
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   SEÇÃO DE REDES SOCIAIS
+   ======================================== */
+
+.footer-social-section[data-astro-cid-footer] {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-social[data-astro-cid-footer] {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link[data-astro-cid-footer] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.social-link[data-astro-cid-footer]:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #d4af37;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .site-footer[data-astro-cid-footer] {
+    padding: 3rem 0 0;
+    margin-top: 4rem;
+  }
+
+  .footer-container[data-astro-cid-footer] {
+    padding: 0 1.5rem;
+  }
+
+  .footer-main[data-astro-cid-footer] {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-logo[data-astro-cid-footer] h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-legal-notice[data-astro-cid-footer] {
+    padding: 2rem 0;
+  }
+
+  .legal-box[data-astro-cid-footer] {
+    padding: 1.5rem;
+  }
+
+  .legal-title[data-astro-cid-footer] {
+    font-size: 1.1rem;
+  }
+
+  .legal-content[data-astro-cid-footer] p {
+    font-size: 0.85rem;
+  }
+
+  .security-badges[data-astro-cid-footer] {
+    gap: 1.5rem;
+  }
+
+  .security-item[data-astro-cid-footer] {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom[data-astro-cid-footer] {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .footer-copyright[data-astro-cid-footer] {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-certifications[data-astro-cid-footer] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-badge[data-astro-cid-footer] {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .security-badges[data-astro-cid-footer] {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-link[data-astro-cid-footer] {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ========================================
+   ANIMAÇÕES E EFEITOS ESPECIAIS
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .footer-logo[data-astro-cid-footer] .logo-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .cert-badge[data-astro-cid-footer] {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+
+  .cert-badge[data-astro-cid-footer]:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .cert-badge[data-astro-cid-footer]:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .cert-badge[data-astro-cid-footer]:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ========================================
+   MODO ESCURO ADICIONAL (OPCIONAL)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .site-footer[data-astro-cid-footer] {
+    background: linear-gradient(135deg, #0f0f1e 0%, #0a0e1e 100%);
+  }
+
+  .legal-box[data-astro-cid-footer] {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
