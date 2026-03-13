@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/oferta-especial", "destination": "/ofertaespecial.html" },
+    { "source": "/oferta-final", "destination": "/ofertafinal.html" }
+  ]
+}
