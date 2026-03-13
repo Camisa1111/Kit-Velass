@@ -44,7 +44,15 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/custom.css">
 
-<script src="js/pa-EZl-5zaGTFA7fpNT9w5a4.js" async="" defer=""></script><script async="" src="https://www.clarity.ms/tag/utvuqqejyg"></script></head>
+<script src="js/pa-EZl-5zaGTFA7fpNT9w5a4.js" async="" defer=""></script><script async="" src="https://www.clarity.ms/tag/utvuqqejyg"></script><!-- Pinterest Tag -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version='3.0';var t=document.createElement('script');t.async=!0,t.src=e;var r=document.getElementsByTagName('script')[0];r.parentNode.insertBefore(t,r)}}('https://s.pinimg.com/ct/core.js');
+pintrk('load', '');
+pintrk('page');
+</script>
+<noscript><img height='1' width='1' style='display:none;' alt='' src='https://ct.pinterest.com/v3/?event=init&tid=&noscript=1'/></noscript>
+<!-- end Pinterest Tag -->
+</head>
 
 
 
@@ -1115,4 +1123,29 @@
 })();
 </script>
 
+<!-- Pinterest Events -->
+<script>
+(function() {
+  // ViewCategory: user viewing Kerzen product category
+  pintrk('track', 'ViewCategory', {
+    product_category: 'handgefertigte Kerzen',
+    currency: 'EUR',
+    value: 27.00
+  });
+
+  // InitiateCheckout: fire on every CTA click
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="pay.hotmart.com"]');
+    if (link) {
+      pintrk('track', 'InitiateCheckout', {
+        value: 27.00,
+        currency: 'EUR',
+        order_quantity: 1,
+        product_name: 'Kerzen Business Akademie – Vollkurs'
+      });
+    }
+  });
+})();
+</script>
+<!-- end Pinterest Events -->
 </body></html>
