@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Load Masterclass — Für Mütter, die aufgehört haben zu hoffen, dass es irgendwann leichter wird</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,opsz,wght@0,6..30,300;0,6..30,400;0,6..30,500;0,6..30,600;0,6..30,700;1,6..30,300;1,6..30,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #FAF8F4;
+      --bg-warm:     #F5EDE4;
+      --bg-deep:     #271510;
+      --burgundy:    #7C1D34;
+      --burg-lt:     #A33050;
+      --terra:       #C4653A;
+      --blush:       #F0D5CB;
+      --sage:        #4E7862;
+      --sage-lt:     #D4EAD8;
+      --gold:        #C49A3C;
+      --gold-lt:     #FDF3D0;
+      --text:        #1C100C;
+      --text-md:     #5C3E35;
+      --text-sm:     #9C7068;
+      --white:       #FFFCF9;
+      --shadow:      0 4px 24px rgba(124,29,52,.10);
+      --shadow-lg:   0 12px 48px rgba(124,29,52,.16);
+      --r:           14px;
+      --ff-d:        'Cormorant Garamond', Georgia, serif;
+      --ff-b:        'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-b); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+
+    .c  { max-width: 920px;  margin: 0 auto; padding: 0 1.5rem; }
+    .cw { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* REVEAL */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+    /* ANNOUNCEMENT */
+    .ann {
+      background: var(--burgundy); color: #FFF5F0;
+      padding: .6rem 1rem; text-align: center;
+      font-size: .83rem; font-weight: 500;
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: center; gap: .5rem; flex-wrap: wrap;
+    }
+    .ann strong { color: #FFD9C7; }
+    .ann a { color: #FFD9C7; text-decoration: underline; }
+
+    /* HERO */
+    .hero { background: var(--bg-deep); position: relative; overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 68% 50%, rgba(124,29,52,.6) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 75% at 15% 85%, rgba(196,101,58,.3) 0%, transparent 55%);
+      pointer-events: none; z-index: 1;
+    }
+    .hero-photo {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 52%; object-fit: cover; object-position: 30% center;
+      opacity: .38; z-index: 0;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      padding: 5rem 1.5rem; max-width: 920px; margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,217,199,.22);
+      color: #FFD9C7; padding: .4rem 1rem; border-radius: 999px;
+      font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 1.8rem;
+    }
+    .eyebrow::before { content:'●'; color:var(--terra); font-size:.55rem; animation: pd 2s infinite; }
+    @keyframes pd { 0%,100%{opacity:1}50%{opacity:.3} }
+
+    .hero h1 {
+      font-family: var(--ff-d); font-size: clamp(2.3rem,5.5vw,4rem);
+      font-weight: 700; line-height: 1.12; color: var(--white);
+      margin-bottom: 1.5rem; max-width: 660px;
+    }
+    .hero h1 em { color: #F5BFA8; font-style: italic; }
+
+    .hero-sub {
+      font-size: clamp(.98rem,2vw,1.15rem);
+      color: #D4B8AF; max-width: 550px;
+      margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8;
+    }
+    .hero-sub strong { color: #FFD9C7; }
+
+    .cta-group { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+
+    .trust-row { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; margin-top: 2.5rem; }
+    .trust-badge { display: flex; align-items: center; gap: .5rem; color: #C8A098; font-size: .8rem; font-weight: 500; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--terra); color: #fff;
+      font-family: var(--ff-b); font-size: 1rem; font-weight: 700;
+      padding: 1rem 2rem; border-radius: 999px; border: none; cursor: pointer;
+      text-decoration: none; transition: all .25s;
+      box-shadow: 0 6px 28px rgba(196,101,58,.45); white-space: nowrap;
+    }
+    .btn:hover { background:#D4753F; transform:translateY(-2px); box-shadow:0 10px 36px rgba(196,101,58,.55); }
+    .btn:active { transform:translateY(0); }
+    .btn--lg { font-size: 1.08rem; padding: 1.2rem 2.6rem; }
+    .btn--full { width: 100%; justify-content: center; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .45rem;
+      color: var(--burgundy); font-size: .88rem; font-weight: 600;
+      text-decoration: none; padding: .4rem 0;
+      border-bottom: 1.5px solid currentColor; transition: opacity .2s;
+    }
+    .btn-ghost:hover { opacity: .65; }
+
+    /* DIVIDER */
+    .div { height: 3px; background: linear-gradient(90deg,transparent,var(--blush),var(--terra),var(--blush),transparent); }
+
+    /* STAT BAR */
+    .stat-bar { background: var(--white); border-top: 3px solid var(--blush); border-bottom: 1px solid #EEE2DA; padding: 2rem 1.5rem; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 820px; margin: 0 auto; }
+    .stat { text-align: center; border-right: 1px solid #EEE2DA; padding-right: 2rem; }
+    .stat:last-child { border-right: none; padding-right: 0; }
+    .stat-n { font-family: var(--ff-d); font-size: 3rem; font-weight: 700; color: var(--burgundy); line-height: 1; margin-bottom: .35rem; }
+    .stat-l { font-size: .8rem; color: var(--text-md); line-height: 1.45; }
+    .stat-s { font-size: .7rem; color: var(--text-sm); margin-top: .25rem; }
+
+    /* SECTIONS */
+    section { padding: 5rem 0; }
+    .s-warm  { background: var(--bg-warm); }
+    .s-white { background: var(--white); }
+    .s-dark  { background: var(--bg-deep); color: var(--white); }
+    .s-blush { background: var(--blush); }
+    .s-sage  { background: var(--sage-lt); }
+
+    /* HEADINGS */
+    .h-d {
+      font-family: var(--ff-d); font-size: clamp(1.9rem,4vw,3rem);
+      font-weight: 700; line-height: 1.15; color: var(--text);
+    }
+    .h-d em { font-style: italic; color: var(--burgundy); }
+    .h-d--w { color: var(--white); }
+    .h-d--w em { color: #F5BFA8; }
+
+    .kicker { font-size: .73rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: .7rem; display: block; }
+    .kicker--lt { color: #F5BFA8; }
+
+    .lead { font-size: 1.08rem; color: var(--text-md); line-height: 1.82; max-width: 640px; }
+    .lead--c { margin: 0 auto; text-align: center; }
+    .body-p { font-size: 1rem; color: var(--text-md); line-height: 1.88; margin-bottom: 1.2rem; }
+    .body-p--dk { color: #C8B4AE; }
+
+    /* PULL QUOTE */
+    .pq {
+      font-family: var(--ff-d); font-size: clamp(1.4rem,3vw,2.1rem);
+      font-style: italic; font-weight: 600; color: var(--burgundy);
+      line-height: 1.35; padding: 2rem 2.5rem;
+      border-left: 4px solid var(--terra);
+      background: var(--white); border-radius: 0 var(--r) var(--r) 0;
+      margin: 2.5rem 0; box-shadow: var(--shadow);
+    }
+    .pq--dk { background: rgba(255,255,255,.06); border-left-color: var(--terra); color: #F5BFA8; }
+
+    /* STORY */
+    .story { max-width: 700px; margin: 0 auto; }
+    .ts { font-family: var(--ff-d); font-size: 3.5rem; font-weight: 700; font-style: italic; color: var(--burgundy); display: block; margin-bottom: 1rem; line-height: 1; }
+    .sl { list-style: none; margin: 1.5rem 0; }
+    .sl li { padding: .5rem 0 .5rem 1.8rem; position: relative; color: var(--text-md); font-size: .97rem; line-height: 1.6; border-bottom: 1px dashed #E8D5CD; }
+    .sl li::before { content:'→'; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+    .sl li:last-child { border-bottom: none; }
+
+    /* SPLIT */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+    .split--r { direction: rtl; }
+    .split--r > * { direction: ltr; }
+
+    /* PORTRAIT */
+    .portrait { position: relative; }
+    .portrait img { width: 100%; border-radius: 120px 16px 120px 16px; object-fit: cover; aspect-ratio: 4/5; }
+    .portrait-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--burgundy); color: #fff;
+      padding: .9rem 1.2rem; border-radius: var(--r);
+      font-size: .83rem; font-weight: 700; text-align: center;
+      box-shadow: var(--shadow-lg); max-width: 195px;
+    }
+    .portrait-badge span { font-family: var(--ff-d); font-size: 2.1rem; font-weight: 700; display: block; line-height: 1; color: #FFD9C7; }
+
+    /* CHECK LIST */
+    .cl { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .cl li { display: flex; align-items: flex-start; gap: .85rem; font-size: .96rem; color: var(--text-md); line-height: 1.5; }
+    .ci { flex-shrink: 0; width: 22px; height: 22px; background: var(--sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .ci svg { width: 12px; height: 12px; }
+    .cl--dk li { color: #C8B4AE; }
+
+    /* BADGES */
+    .badges { display: flex; gap: .7rem; flex-wrap: wrap; }
+    .badge { background: var(--bg-warm); border: 1px solid #E8D5CD; border-radius: 999px; padding: .3rem .85rem; font-size: .77rem; font-weight: 600; color: var(--text-md); }
+
+    /* FAIL GRID */
+    .fail-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .fail-box { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r); padding: 1.7rem; transition: border-color .3s; }
+    .fail-box:hover { border-color: rgba(245,191,168,.3); }
+    .fail-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+    .fail-box h4 { font-size: .97rem; font-weight: 700; color: #E8D5CD; margin-bottom: .5rem; }
+    .fail-box p { font-size: .87rem; color: #9C7068; line-height: 1.65; }
+
+    /* MODULES */
+    .mods { display: flex; flex-direction: column; gap: 1.1rem; }
+    .mod {
+      display: flex; gap: 1.4rem;
+      background: var(--white); border-radius: var(--r); padding: 1.7rem;
+      border: 1px solid #EEE2DA; cursor: pointer; transition: all .3s;
+      position: relative; overflow: hidden;
+    }
+    .mod::before { content:''; position: absolute; left:0; top:0; bottom:0; width:4px; background:var(--blush); transition: background .3s; }
+    .mod:hover, .mod.on { border-color: var(--burgundy); box-shadow: var(--shadow); }
+    .mod:hover::before, .mod.on::before { background: var(--burgundy); }
+    .mn { flex-shrink:0; width:44px; height:44px; border-radius:50%; background:var(--blush); display:flex; align-items:center; justify-content:center; font-family:var(--ff-d); font-size:1.3rem; font-weight:700; color:var(--burgundy); transition:all .3s; }
+    .mod:hover .mn, .mod.on .mn { background:var(--burgundy); color:var(--white); }
+    .mc h4 { font-size:1.02rem; font-weight:700; color:var(--text); margin-bottom:.4rem; }
+    .mc p { font-size:.91rem; color:var(--text-md); line-height:1.62; }
+    .mr { display:inline-flex; align-items:center; gap:.4rem; margin-top:.7rem; background:var(--sage-lt); color:var(--sage); padding:.28rem .8rem; border-radius:999px; font-size:.77rem; font-weight:600; }
+
+    /* TESTIMONIALS */
+    .tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    .tc { background: var(--white); border-radius: var(--r); padding: 1.7rem; border: 1px solid #EEE2DA; display: flex; flex-direction: column; box-shadow: 0 2px 12px rgba(0,0,0,.04); transition: transform .3s, box-shadow .3s; }
+    .tc:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .stars { color: var(--gold); font-size: .88rem; letter-spacing: .05em; margin-bottom: .9rem; }
+    .tc blockquote { font-size: .93rem; color: var(--text-md); line-height: 1.78; font-style: italic; flex: 1; margin-bottom: 1.3rem; }
+    .tres { margin-top: .9rem; padding: .65rem 1rem; background: var(--sage-lt); border-radius: 8px; font-size: .8rem; color: var(--sage); font-weight: 600; display: flex; align-items: center; gap: .5rem; }
+    .ta { display: flex; align-items: center; gap: .85rem; }
+    .ta img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blush); }
+    .ta strong { display: block; font-size: .86rem; font-weight: 700; color: var(--text); }
+    .ta span { font-size: .76rem; color: var(--text-sm); }
+
+    /* FEATURES */
+    .fgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    .fb { background: var(--white); border: 1px solid #EEE2DA; border-radius: var(--r); padding: 1.7rem; text-align: center; transition: box-shadow .3s; }
+    .fb:hover { box-shadow: var(--shadow); }
+    .fbi { width:52px;height:52px;border-radius:14px;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;font-size:1.5rem; }
+    .fb h4 { font-size:.97rem;font-weight:700;color:var(--text);margin-bottom:.55rem; }
+    .fb p { font-size:.86rem;color:var(--text-md);line-height:1.65; }
+
+    /* PACKAGE */
+    .pkg { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .pi { display:flex;gap:1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.2rem;align-items:flex-start;transition:border-color .3s; }
+    .pi:hover { border-color: rgba(245,191,168,.35); }
+    .pii { flex-shrink:0;width:40px;height:40px;background:rgba(124,29,52,.4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem; }
+    .pi h5 { font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.28rem; }
+    .pi p { font-size:.8rem;color:#C8B4AE;line-height:1.5; }
+    .pi .val { font-size:.7rem;color:var(--gold);font-weight:600;margin-top:.28rem; }
+
+    /* KK */
+    .kk-wrap { background:linear-gradient(135deg,#0E3B2A 0%,#0A2D20 100%); border-radius:20px; padding:3rem; border:1px solid rgba(78,120,98,.4); position:relative; overflow:hidden; }
+    .kk-wrap::before { content:'🏥'; position:absolute;right:2rem;top:2rem;font-size:5rem;opacity:.1; }
+    .kk-steps { display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem; }
+    .kk-step { background:rgba(255,255,255,.06);border-radius:var(--r);padding:1.3rem;border:1px solid rgba(212,234,216,.14); }
+    .kk-step-n { font-family:var(--ff-d);font-size:2.4rem;font-weight:700;color:#6EE7B7;line-height:1;margin-bottom:.4rem; }
+    .kk-step h5 { font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.35rem; }
+    .kk-step p { font-size:.8rem;color:#A8C8B4;line-height:1.55; }
+    .kk-hl { background:rgba(110,231,183,.12);border:1px solid rgba(110,231,183,.3);border-radius:var(--r);padding:1.4rem 2rem;margin-top:2rem;text-align:center; }
+    .kk-hl-n { font-family:var(--ff-d);font-size:2.8rem;font-weight:700;color:#6EE7B7;line-height:1; }
+    .kk-hl p { font-size:.88rem;color:#A8C8B4;margin-top:.3rem; }
+    .kk-hl small { font-size:.73rem;color:#6B9680;display:block;margin-top:.8rem; }
+
+    /* PRICING */
+    .price-card { background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(124,29,52,.14);max-width:580px;margin:0 auto;border:2px solid var(--burgundy); }
+    .pc-head { background:var(--burgundy);color:var(--white);padding:2rem 2.5rem;text-align:center; }
+    .pc-head h3 { font-family:var(--ff-d);font-size:1.6rem;font-weight:700;font-style:italic;margin-bottom:.3rem; }
+    .pc-head p { font-size:.84rem;color:#F5BFA8; }
+    .pc-body { padding:2.5rem; }
+    .price-stack { text-align:center;margin-bottom:2rem; }
+    .p-orig { font-size:1.08rem;color:var(--text-sm);text-decoration:line-through; }
+    .p-main { font-family:var(--ff-d);font-size:4.5rem;font-weight:700;color:var(--text);line-height:1;margin:.3rem 0; }
+    .p-real { display:inline-block;background:var(--sage-lt);color:var(--sage);padding:.45rem 1.2rem;border-radius:999px;font-size:.9rem;font-weight:700;margin-top:.7rem; }
+    .p-note { font-size:.77rem;color:var(--text-sm);margin-top:.4rem; }
+    .pf { list-style:none;margin-bottom:1.8rem;display:flex;flex-direction:column;gap:.65rem; }
+    .pf li { display:flex;align-items:center;gap:.7rem;font-size:.91rem;color:var(--text-md); }
+    .pf li::before { content:'✓';flex-shrink:0;width:20px;height:20px;background:var(--sage-lt);color:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:900; }
+
+    /* COUNTDOWN */
+    .cdw { background:var(--bg-warm);border-radius:var(--r);padding:1.2rem;text-align:center;margin-bottom:1.4rem;border:1px dashed #D4A898; }
+    .cd-label { font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-sm);margin-bottom:.55rem; }
+    .cd-digits { display:flex;justify-content:center;gap:.5rem;align-items:center; }
+    .cd-unit { text-align:center; }
+    .cd-unit span:first-child { font-family:var(--ff-d);font-size:2rem;font-weight:700;color:var(--burgundy);display:block;min-width:2.5ch;background:var(--white);border-radius:8px;padding:.18rem .5rem;line-height:1.2; }
+    .cd-unit span:last-child { font-size:.63rem;color:var(--text-sm);text-transform:uppercase;letter-spacing:.08em; }
+    .cd-sep { font-family:var(--ff-d);font-size:1.8rem;font-weight:700;color:var(--terra);margin-bottom:1rem; }
+
+    /* GUARANTEE */
+    .gbox { background:var(--white);border-radius:var(--r);padding:2.5rem;border:1px solid #EEE2DA;display:flex;gap:2rem;align-items:center;box-shadow:var(--shadow); }
+    .gseal { flex-shrink:0;width:100px;height:100px; }
+    .gbox h3 { font-family:var(--ff-d);font-size:1.55rem;font-weight:700;color:var(--burgundy);margin-bottom:.65rem; }
+    .gbox p { font-size:.93rem;color:var(--text-md);line-height:1.72; }
+
+    /* FAQ */
+    .faq-list { display:flex;flex-direction:column;gap:.75rem; }
+    .fi { background:var(--white);border:1px solid #EEE2DA;border-radius:var(--r);overflow:hidden; }
+    .fi-t { width:100%;padding:1.35rem 1.7rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:none;border:none;text-align:left;font-family:var(--ff-b);font-size:.95rem;font-weight:600;color:var(--text);gap:1rem;transition:background .2s; }
+    .fi-t:hover { background:var(--bg-warm); }
+    .fchev { flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--bg-warm);display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--burgundy);font-size:.68rem;font-weight:900; }
+    .fi.open .fchev { background:var(--burgundy);color:var(--white);transform:rotate(180deg); }
+    .fi-b { max-height:0;overflow:hidden;transition:max-height .4s ease; }
+    .fi.open .fi-b { max-height:400px; }
+    .fi-b p { padding:0 1.7rem 1.35rem;font-size:.9rem;color:var(--text-md);line-height:1.78; }
+
+    /* FOR WHOM */
+    .fw-grid { display:grid;grid-template-columns:1fr 1fr;gap:1.4rem; }
+    .fw-col { padding:1.8rem;border-radius:var(--r); }
+    .fw-yes { background:var(--sage-lt);border:1px solid rgba(78,120,98,.28); }
+    .fw-no  { background:#FFF0EE;border:1px solid rgba(239,68,68,.13); }
+    .fw-col h4 { font-weight:700;font-size:.97rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem; }
+    .fw-yes h4 { color:var(--sage); } .fw-no h4 { color:#DC2626; }
+    .fw-list { list-style:none;display:flex;flex-direction:column;gap:.65rem; }
+    .fw-list li { font-size:.88rem;color:var(--text-md);display:flex;gap:.65rem;align-items:flex-start;line-height:1.5; }
+    .fw-list li span:first-child { flex-shrink:0; }
+
+    /* FINAL CTA */
+    .fcta { background:linear-gradient(150deg,#5C1A2E 0%,#7C1D34 50%,#9B3550 100%);color:var(--white);padding:6rem 1.5rem;text-align:center;position:relative;overflow:hidden; }
+    .fcta::before { content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none; }
+
+    footer { background:var(--bg-deep);padding:3rem 1.5rem;text-align:center;color:#6B504A;font-size:.81rem; }
+    footer a { color:#9B7870;text-decoration:none; }
+    footer a:hover { color:#D4B8AF; }
+    footer p+p { margin-top:.75rem; }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .split,.tgrid,.fail-grid,.fgrid,.fw-grid,.pkg,.kk-steps { grid-template-columns:1fr; }
+      .split--r { direction:ltr; }
+      .portrait { max-width:400px;margin:0 auto; }
+      .portrait-badge { right:0; }
+      .stat-grid { grid-template-columns:1fr; gap:1.4rem; }
+      .stat { border-right:none;padding-right:0;border-bottom:1px solid #EEE2DA;padding-bottom:1.1rem; }
+      .stat:last-child { border-bottom:none;padding-bottom:0; }
+      .gbox { flex-direction:column;text-align:center; }
+    }
+    @media(max-width:600px){
+      .hero-photo { opacity:.18;width:100%; }
+      .hero-inner { padding:3.5rem 1.2rem; }
+      section { padding:3.5rem 0; }
+      .kk-wrap { padding:1.7rem 1.2rem; }
+      .pc-body { padding:1.7rem 1.3rem; }
+      .ann { font-size:.73rem; }
+      .pq { padding:1.4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">
+  🏥 <strong>Krankenkassen-Förderung:</strong> Dieser Kurs ist zertifiziert — deine Kasse übernimmt bis zu 80 %.&nbsp;
+  <a href="#kk">Wie das funktioniert →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-photo"
+    src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=900&q=80&auto=format&fit=crop"
+    alt="" loading="eager" />
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Studie 2025 · 1.053 Mütter befragt</div>
+
+    <h1>
+      Dein Kopf arbeitet noch —<br>
+      obwohl der Tag<br>
+      <em>schon längst vorbei ist.</em>
+    </h1>
+
+    <p class="hero-sub">
+      58 % der deutschen Mütter opfern ihre Karriere wegen etwas, das kein Mensch sieht.
+      Kein Arzt diagnostiziert es. Dein Partner versteht es nicht.
+      Und du hörst irgendwann auf, es zu erklären.
+      <strong>Es hat einen Namen — und endlich einen Ausweg.</strong>
+    </p>
+
+    <div class="cta-group">
+      <a href="#pricing" class="btn btn--lg">
+        Jetzt Platz sichern
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#modules" class="btn-ghost" style="color:#D4B8AF;border-color:#D4B8AF;">Was erwartet mich? ↓</a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-badge">
+        <svg width="15" height="15" fill="none" viewBox="0 0 16 16"><path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" fill="#C4653A"/></svg>
+        Zertifizierter Präventionskurs
+      </div>
+      <div class="trust-badge">
+        <svg width="15" height="15" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="#C4653A" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#C4653A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        30-Tage Geld-zurück-Garantie
+      </div>
+      <div class="trust-badge">
+        <svg width="15" height="15" fill="none" viewBox="0 0 16 16"><path d="M8 2a5 5 0 100 12A5 5 0 008 2zm0 11a4.5 4.5 0 110-9 4.5 4.5 0 010 9zm.5-7.5h-1V9l3 1.8.5-.9L8.5 8.5V5.5z" fill="#C4653A"/></svg>
+        Nur €29,40 nach Kassenerstattung
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- STATS -->
+<div class="stat-bar">
+  <div class="stat-grid">
+    <div class="stat rv">
+      <div class="stat-n">58 %</div>
+      <div class="stat-l">der deutschen Mütter reduzieren ihre Arbeitszeit oder geben Karriereziele auf</div>
+      <div class="stat-s">Quelle: News4Teachers-Umfrage 2025, n=1.053</div>
+    </div>
+    <div class="stat rv d2">
+      <div class="stat-n">43 h</div>
+      <div class="stat-l">mehr unbezahlte Sorgearbeit leisten Mütter pro Woche im Vergleich zu Vätern</div>
+      <div class="stat-s">Quelle: Destatis Zeitverwendungsstudie</div>
+    </div>
+    <div class="stat rv d4">
+      <div class="stat-n">80 %</div>
+      <div class="stat-l">der Kurskosten übernimmt deine Krankenkasse — zertifiziert nach §20 SGB V</div>
+      <div class="stat-s">Eigenanteil: ab €29,40</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="s-white">
+  <div class="c">
+    <div class="story">
+      <span class="kicker rv">Kennst du diesen Moment?</span>
+      <span class="ts rv">23:14 Uhr.</span>
+
+      <p class="body-p rv">Dein Kind schläft. Dein Partner schläft. Das Haus ist endlich still.<br>
+      Nur du liegst wach — nicht weil du nicht müde wärst.<br>
+      Du bist <em>erschöpft bis in die Knochen.</em></p>
+
+      <p class="body-p rv">Aber dein Kopf dreht sich weiter. Wie immer.</p>
+
+      <ul class="sl rv">
+        <li>Kita-Anmeldung für nächstes Jahr — wann war die Frist nochmal?</li>
+        <li>Der Arzttermin vom Kleinen muss verschoben werden</li>
+        <li>Einkaufen morgen — Milch, Windeln, Zahnpasta. Die letzte Tube ist leer.</li>
+        <li>Mamas Geburtstag ist in zwei Wochen — noch kein Geschenk</li>
+        <li>Die Wäsche liegt noch im Trockner. Schon seit heute Nachmittag.</li>
+        <li>Was koche ich morgen? Schon wieder nichts eingeplant.</li>
+        <li>Der E-Mail-Stapel bei der Arbeit — wenn du am Montag zurückkommst…</li>
+        <li>Habe ich meinem Kind heute genug Aufmerksamkeit gegeben?</li>
+      </ul>
+
+      <div class="pq rv">
+        „Ich bin so müde. Aber sobald ich die Augen schließe, fängt mein Kopf erst richtig an."
+      </div>
+
+      <p class="body-p rv">Das ist keine Schwäche. Das ist kein Versagen als Mutter.
+      Das ist <strong>Mental Load</strong> — die unsichtbare, endlose Verwaltungsarbeit deines Familienlebens,
+      die in deinem Kopf stattfindet. Und du trägst sie fast vollständig allein.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="s-warm">
+  <div class="c">
+    <div class="split">
+      <div>
+        <span class="kicker rv">Das, was du fühlst — hat einen Namen</span>
+        <h2 class="h-d rv" style="margin-bottom:1.5rem;">
+          Es ist nicht deine Schuld.<br>
+          <em>Es ist das System.</em>
+        </h2>
+
+        <p class="body-p rv">Mental Load bezeichnet die kognitive Arbeit, die entsteht,
+        wenn eine Person das gesamte Management des Familienlebens trägt:
+        Planen, Erinnern, Koordinieren, Antizipieren — permanent, unsichtbar, parallel zu allem anderen.</p>
+
+        <p class="body-p rv">Studien zeigen: <strong>In 89 % der deutschen Haushalte mit Kindern</strong>
+        tragen Mütter den Großteil dieser Last — unabhängig davon, ob sie berufstätig sind oder nicht.
+        Unabhängig davon, wie aufgeklärt die Partnerschaft sonst ist.</p>
+
+        <p class="body-p rv">Das Schlimmste? <strong>Niemand sieht es.</strong> Weder dein Partner noch deine Familie.
+        Du selbst hörst irgendwann auf, darüber zu reden — weil du weißt: Sie verstehen es nicht.
+        Und das macht es noch einsamer.</p>
+
+        <div class="badges rv" style="margin-top:1.4rem;">
+          <span class="badge">😮‍💨 Chronische Erschöpfung</span>
+          <span class="badge">😔 Schuldgefühle</span>
+          <span class="badge">💔 Partnerschaftsstreit</span>
+          <span class="badge">😤 Unsichtbares Opfer</span>
+        </div>
+      </div>
+      <div class="portrait rv">
+        <img src="https://images.unsplash.com/photo-1542220355-0266fcf2c3d6?w=600&q=80&auto=format&fit=crop" alt="" />
+        <div class="portrait-badge">
+          <span>58 %</span>
+          der Mütter geben Karriereziele auf — wegen Mental Load
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT FAILED -->
+<section class="s-dark">
+  <div class="c">
+    <div style="text-align:center;max-width:660px;margin:0 auto 3rem;" class="rv">
+      <span class="kicker kicker--lt">Was bisher nicht geholfen hat</span>
+      <h2 class="h-d h-d--w" style="margin-bottom:0;">
+        Du hast es bereits versucht.<br><em>Wirklich.</em>
+      </h2>
+    </div>
+
+    <div class="fail-grid">
+      <div class="fail-box rv">
+        <div class="fail-icon">😩</div>
+        <h4>„Sprich einfach mit ihm"</h4>
+        <p>Du hast geredet. Immer wieder. Aber nach zwei Tagen ist alles wieder wie vorher. Er sieht es einfach nicht.</p>
+      </div>
+      <div class="fail-box rv d1">
+        <div class="fail-icon">📱</div>
+        <h4>Produktivitäts-Apps</h4>
+        <p>Notion, Trello, Familienkalender — das Organisieren der Organisation macht mehr Arbeit, nicht weniger.</p>
+      </div>
+      <div class="fail-box rv d2">
+        <div class="fail-icon">📖</div>
+        <h4>Self-Help-Bücher</h4>
+        <p>Inspirierend. Wirklich. Aber du hattest keine Zeit, sie fertig zu lesen — weil du gerade das Abendessen kochst.</p>
+      </div>
+      <div class="fail-box rv d1">
+        <div class="fail-icon">🧘</div>
+        <h4>Achtsamkeit & Yoga</h4>
+        <p>Hilfreich im Moment. Aber der mentale To-do-Berg wartet nach der Stunde noch genau so hoch.</p>
+      </div>
+      <div class="fail-box rv d2">
+        <div class="fail-icon">👩‍⚕️</div>
+        <h4>Zum Arzt gehen</h4>
+        <p>„Erschöpfung ist normal bei kleinen Kindern." Du hast diese Aussage zu oft gehört. Aber das ist keine Lösung.</p>
+      </div>
+      <div class="fail-box rv d3">
+        <div class="fail-icon">🏖️</div>
+        <h4>Urlaub nehmen</h4>
+        <p>Du hast geplant, gepackt, organisiert. Du hast den Urlaub im Kopf verwaltet — bis du dort ankamst.</p>
+      </div>
+    </div>
+
+    <div class="pq pq--dk rv" style="margin-top:3rem;">
+      Das Problem ist nicht, dass du zu schwach bist. Das Problem ist,
+      dass niemand dir je gezeigt hat, wie dieses System wirklich funktioniert —
+      und wie du es ein für alle Mal veränderst.
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION BRIDGE -->
+<section class="s-white">
+  <div class="c">
+    <div class="split split--r">
+      <div>
+        <span class="kicker rv">Der Durchbruch</span>
+        <h2 class="h-d rv" style="margin-bottom:1.5rem;">
+          Was wäre, wenn du in<br>
+          30 Tagen wirklich<br>
+          <em>durchatmen könntest?</em>
+        </h2>
+
+        <p class="body-p rv">Nicht kurz. Nicht für eine Stunde Yoga.
+        Echte, strukturelle Erleichterung —
+        die Art, bei der du abends ins Bett gehst und dein Kopf <em>einfach still ist.</em></p>
+
+        <p class="body-p rv">Die <strong>Mental Load Masterclass</strong> ist der einzige deutschsprachige Kurs,
+        der dir nicht erklärt, was Mental Load ist —
+        sondern dir Schritt für Schritt zeigt, wie du ihn halbierst.
+        Wissenschaftlich fundiert, praktisch umsetzbar, mit Vorlagen, die wirklich funktionieren.</p>
+
+        <ul class="cl rv" style="margin-top:1.4rem;">
+          <li>
+            <span class="ci"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Sichtbar machen, was unsichtbar ist — dein vollständiges Mental-Load-Profil
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Delegieren ohne Schuldgefühle — mit Gesprächsvorlagen für deinen Partner
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Systeme aufbauen, die ohne dich laufen — nachhaltig, nicht für eine Woche
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Wieder Energie für das, was dir wirklich wichtig ist
+          </li>
+        </ul>
+      </div>
+      <div class="portrait rv">
+        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&q=80&auto=format&fit=crop&crop=top" alt="" />
+        <div class="portrait-badge" style="background:var(--sage);">
+          <span>30</span>
+          Tage bis zur echten Entlastung
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="s-warm" id="modules">
+  <div class="c">
+    <div style="max-width:600px;margin-bottom:3rem;" class="rv">
+      <span class="kicker">Was dich erwartet</span>
+      <h2 class="h-d" style="margin-bottom:1rem;">5 Module. <em>Ein Leben, das sich wieder leicht anfühlt.</em></h2>
+      <p class="lead">Kein theoretisches Selbsthilfe-Buch. Kein Kurs, den du nie fertigmachst.
+      Konkrete Werkzeuge, die du nach jeder Einheit sofort anwenden kannst.</p>
+    </div>
+
+    <div class="mods">
+      <div class="mod rv">
+        <div class="mn">1</div>
+        <div class="mc">
+          <h4>Die unsichtbare Last sehen — endlich in Worte fassen</h4>
+          <p>Was Mental Load wirklich ist: warum er entsteht, warum er fast immer bei Müttern landet, und warum „Sag ihm einfach, was er tun soll" keine Lösung ist. Inkl. wissenschaftlicher Grundlagen und dem <strong>Mental Load Audit</strong> — einer ehrlichen Bestandsaufnahme deiner eigenen Last.</p>
+          <span class="mr">✦ Ergebnis: Du kannst endlich benennen, was du fühlst</span>
+        </div>
+      </div>
+
+      <div class="mod rv">
+        <div class="mn">2</div>
+        <div class="mc">
+          <h4>Dein persönliches Mental-Load-Profil — alles auf den Tisch</h4>
+          <p>Mit dem interaktiven <strong>Mental Map Tool</strong> visualisierst du alle kognitiven Aufgaben, die du gerade trägst. Viele Teilnehmerinnen entdecken 60–80 Aufgaben, die sie nicht bewusst auf dem Schirm hatten. Erst wenn du siehst, was du trägst, kannst du es loslassen.</p>
+          <span class="mr">✦ Ergebnis: Vollständige Sichtbarkeit — für dich und deinen Partner</span>
+        </div>
+      </div>
+
+      <div class="mod rv">
+        <div class="mn">3</div>
+        <div class="mc">
+          <h4>Delegation ohne Schuldgefühle — Gespräche, die wirklich funktionieren</h4>
+          <p>Konkrete Kommunikationsstrategien und <strong>fertige Gesprächsskripte</strong> für Gespräche mit Partner, Familie und — wenn nötig — auch mit dir selbst. Kein Streiten, kein Erklären, kein Erziehen. Nur klare, funktionierende Absprachen.</p>
+          <span class="mr">✦ Ergebnis: Faire Aufgabenverteilung ohne Konflikt</span>
+        </div>
+      </div>
+
+      <div class="mod rv">
+        <div class="mn">4</div>
+        <div class="mc">
+          <h4>Systeme &amp; Automatisierung — bis zu 60 % weniger mentale Reibung</h4>
+          <p>Die klügsten Apps, digitalen Tools und Familienroutinen, die Mütter wirklich entlasten — kuratiert und getestet. Du ersetzt deinen überfüllten Werkzeugkasten durch ein schlankes System, das ohne deine ständige Aufmerksamkeit läuft.</p>
+          <span class="mr">✦ Ergebnis: Weniger Chaos, mehr Kapazität für dich</span>
+        </div>
+      </div>
+
+      <div class="mod rv">
+        <div class="mn">5</div>
+        <div class="mc">
+          <h4>Dein 30-Tage-Plan — Freiheit, die bleibt</h4>
+          <p>Kein Sprint, der nach einer Woche zusammenbricht. Du entwickelst einen <strong>individuellen 30-Tage-Aktionsplan</strong> mit messbaren Meilensteinen und Unterstützung durch unsere Community. Nach diesem Modul trägst du nicht mehr alleine.</p>
+          <span class="mr">✦ Ergebnis: Nachhaltige Entlastung — dauerhaft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS 1 -->
+<section class="s-white">
+  <div class="c">
+    <span class="kicker rv" style="display:block;text-align:center;">Echte Stimmen</span>
+    <h2 class="h-d rv" style="text-align:center;margin-bottom:.5rem;">Was Mütter sagen, <em>nachdem</em> sich alles änderte</h2>
+    <p class="lead lead--c rv" style="margin-bottom:3rem;">Keine gesponserten Beiträge. Keine Vorher-Nachher-Bilder. Nur echte Frauen.</p>
+
+    <div class="tgrid">
+      <div class="tc rv">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Modul 3 hat mein Gespräch mit meinem Mann grundlegend verändert. Er hat zum ersten Mal wirklich verstanden, was ich meinte. Wir hatten dieses Gespräch noch nie so führen können — in drei Jahren nicht."</blockquote>
+        <div class="tres">🌱 Mental Load um ~55 % reduziert — nach 3 Wochen</div>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Sabrina" />
+          <div><strong>Sabrina M.</strong><span>34 J. · Mutter von zwei · München</span></div>
+        </div>
+      </div>
+
+      <div class="tc rv d2">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich habe €113 von der AOK zurückbekommen. Der Kurs hat mich effektiv €34 gekostet. Aber was mich wirklich berührt hat: Ich habe zum ersten Mal verstanden, warum ich mich seit Jahren schuldig fühlte."</blockquote>
+        <div class="tres">🏥 €113 von der Krankenkasse erstattet</div>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Lena" />
+          <div><strong>Lena B.</strong><span>31 J. · Frischgebackene Mama · Hamburg</span></div>
+        </div>
+      </div>
+
+      <div class="tc rv d4">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich arbeite 30 Stunden die Woche und hatte das Gefühl, zwei Jobs zu machen. Heute habe ich echte Feierabende. Mein Mann übernimmt tatsächlich Verantwortung — weil wir ein System haben."</blockquote>
+        <div class="tres">⏱️ 8 h Freizeit pro Woche zurückgewonnen</div>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Julia" />
+          <div><strong>Julia K.</strong><span>38 J. · Berufstätige Mutter · Berlin</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="s-warm">
+  <div class="c">
+    <div style="text-align:center;max-width:580px;margin:0 auto 2.5rem;" class="rv">
+      <span class="kicker">Für wen ist das?</span>
+      <h2 class="h-d"><em>Ist dieser Kurs für dich?</em></h2>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-col fw-yes rv">
+        <h4>✓ Ja, für dich — wenn…</h4>
+        <ul class="fw-list">
+          <li><span>✓</span> Du das Gefühl hast, der unsichtbare Manager deiner Familie zu sein</li>
+          <li><span>✓</span> Du bereits weißt, was Mental Load ist, aber nicht wie du ihn loswirst</li>
+          <li><span>✓</span> Du bereit bist, etwas zu verändern — auch wenn das unbequeme Gespräche bedeutet</li>
+          <li><span>✓</span> Du 1–2 Stunden pro Woche investieren kannst — und dafür langfristig Stunden gewinnst</li>
+          <li><span>✓</span> Du konkrete Werkzeuge willst, keine Inspirations-Phrasen</li>
+          <li><span>✓</span> Du Frauen suchst, die wirklich verstehen, wie sich das anfühlt</li>
+        </ul>
+      </div>
+      <div class="fw-col fw-no rv d2">
+        <h4 style="color:#DC2626;">✕ Nicht ideal, wenn…</h4>
+        <ul class="fw-list">
+          <li><span>✕</span> Du eine schnelle Motivationsspritze suchst, ohne wirklich etwas zu ändern</li>
+          <li><span>✕</span> Du nicht bereit bist, mit deinem Partner oder deiner Familie zu sprechen</li>
+          <li><span>✕</span> Du gerade in einer akuten psychischen Krise bist, die professionelle Unterstützung benötigt</li>
+        </ul>
+        <p style="font-size:.8rem;color:var(--text-sm);margin-top:1rem;line-height:1.6;">
+          In dem Fall empfehlen wir dir zuerst professionelle Hilfe zu suchen.
+          Dieser Kurs ergänzt, ersetzt aber keine Therapie.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="s-dark">
+  <div class="c">
+    <div style="text-align:center;max-width:600px;margin:0 auto 3rem;" class="rv">
+      <span class="kicker kicker--lt">Vollständiges Paket</span>
+      <h2 class="h-d h-d--w">Alles, was du brauchst —<br><em>und nichts, was du nicht brauchst</em></h2>
+    </div>
+
+    <div class="pkg rv">
+      <div class="pi"><div class="pii">🎬</div><div><h5>5 Video-Module (HD)</h5><p>Kompakt, präzise, jederzeit abrufbar. ~25 Min. pro Modul.</p><div class="val">Wert: €97</div></div></div>
+      <div class="pi"><div class="pii">🗺️</div><div><h5>Mental Load Audit Workbook</h5><p>Interaktives PDF — alle kognitiven Aufgaben sichtbar machen.</p><div class="val">Wert: €27</div></div></div>
+      <div class="pi"><div class="pii">💬</div><div><h5>Gesprächsskripte für Partner &amp; Familie</h5><p>Wort-für-Wort-Vorlagen für die schwierigen Gespräche.</p><div class="val">Wert: €37</div></div></div>
+      <div class="pi"><div class="pii">🤝</div><div><h5>Private Community (WhatsApp)</h5><p>Hunderte Mütter, die denselben Weg gehen. 24/7 Unterstützung.</p><div class="val">Wert: €47</div></div></div>
+      <div class="pi"><div class="pii">📅</div><div><h5>30-Tage Aktionsplan</h5><p>Tagesgenauer Plan mit messbaren Meilensteinen.</p><div class="val">Wert: €24</div></div></div>
+      <div class="pi"><div class="pii">⚡</div><div><h5>Toolkit: Apps &amp; Automatisierungen</h5><p>Die 12 effektivsten Tools für Familien — erklärt, sofort einsetzbar.</p><div class="val">Wert: €19</div></div></div>
+      <div class="pi"><div class="pii">🏥</div><div><h5>Krankenkasse-Erstattungsanleitung</h5><p>Schritt für Schritt — so holst du bis zu 80 % zurück.</p><div class="val">Exklusiv für Kursteilnehmerinnen</div></div></div>
+      <div class="pi"><div class="pii">♾️</div><div><h5>Lebenslanger Zugang</h5><p>Inkl. aller zukünftigen Updates. Einmal kaufen — für immer.</p><div class="val">Unbezahlbar</div></div></div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;" class="rv">
+      <p style="color:#9C7068;font-size:.86rem;margin-bottom:.4rem;">Gesamtwert des Pakets</p>
+      <p style="font-family:var(--ff-d);font-size:2.4rem;font-weight:700;color:#9C7068;text-decoration:line-through;line-height:1;">€251</p>
+      <p style="font-family:var(--ff-d);font-size:1.25rem;font-weight:600;color:#F5BFA8;margin-top:.3rem;">
+        Dein Preis heute: <strong style="color:#fff;">€147</strong> — oder <strong style="color:#6EE7B7;">€29,40</strong> nach Kassenerstattung
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS 2 -->
+<section class="s-blush">
+  <div class="c">
+    <h2 class="h-d rv" style="text-align:center;margin-bottom:3rem;">Noch mehr <em>echte Veränderungen</em></h2>
+    <div class="tgrid">
+      <div class="tc rv" style="background:var(--white);">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Ich hatte erwartet, etwas über Organisation zu lernen. Stattdessen habe ich verstanden, warum ich mich seit Jahren schuldig gefühlt habe — und dass das nicht meine Schuld war. Das allein war es wert."</blockquote>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Marie" />
+          <div><strong>Marie T.</strong><span>36 J. · Teilzeit · Frankfurt</span></div>
+        </div>
+      </div>
+      <div class="tc rv d2" style="background:var(--white);">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Mein Mann hat Modul 3 mit mir zusammen angeschaut. Das hat mehr bewirkt als zwei Jahre Paartherapie — weil es so konkret auf unsere Situation zugeschnitten war."</blockquote>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Annika" />
+          <div><strong>Annika W.</strong><span>40 J. · Mutter von drei · Köln</span></div>
+        </div>
+      </div>
+      <div class="tc rv d4" style="background:var(--white);">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Nach dem Kurs bin ich wieder in meinen alten Job zurückgekehrt — Vollzeit. Etwas, das ich für unmöglich hielt. Dieser Kurs hat mir gezeigt, dass das möglich ist, wenn man die richtigen Systeme hat."</blockquote>
+        <div class="ta">
+          <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="Claudia" />
+          <div><strong>Claudia P.</strong><span>33 J. · Wieder Vollzeit · Düsseldorf</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KRANKENKASSE -->
+<section class="s-sage" id="kk">
+  <div class="c">
+    <div style="text-align:center;max-width:600px;margin:0 auto 3rem;" class="rv">
+      <span class="kicker">Der Geheimtipp</span>
+      <h2 class="h-d">Deine Krankenkasse bezahlt<br><em>fast den kompletten Kurs</em></h2>
+    </div>
+
+    <div class="kk-wrap rv">
+      <h3 style="font-family:var(--ff-d);font-size:1.75rem;font-weight:700;color:var(--white);margin-bottom:.5rem;">Was die wenigsten wissen:</h3>
+      <p style="color:#A8C8B4;font-size:.97rem;max-width:560px;line-height:1.72;">
+        Dieser Kurs ist als offizieller <strong style="color:#fff;">Präventionskurs nach §20 SGB V</strong> zertifiziert.
+        Das bedeutet: Deine gesetzliche Krankenversicherung ist verpflichtet, dir einen Teil der Kosten zu erstatten —
+        bei den meisten Kassen bis zu 80 %.
+      </p>
+
+      <div class="kk-steps">
+        <div class="kk-step">
+          <div class="kk-step-n">1.</div>
+          <h5>Kurs kaufen</h5>
+          <p>Du kaufst die Masterclass für €147 und erhältst sofortigen Zugang zu allen Inhalten.</p>
+        </div>
+        <div class="kk-step">
+          <div class="kk-step-n">2.</div>
+          <h5>Unterlagen einreichen</h5>
+          <p>Du erhältst alle Zertifizierungsunterlagen von uns. Einreichen dauert 10 Minuten.</p>
+        </div>
+        <div class="kk-step">
+          <div class="kk-step-n">3.</div>
+          <h5>Geld zurück</h5>
+          <p>Die meisten Kassen erstatten €80–120 direkt auf dein Konto — im Schnitt nach 3–4 Wochen.</p>
+        </div>
+      </div>
+
+      <div class="kk-hl">
+        <div style="font-size:.78rem;color:#A8C8B4;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;">Dein realer Eigenanteil</div>
+        <div class="kk-hl-n">ab €29,40</div>
+        <p>Bei 80 % Erstattung — weniger als ein Abendessen mit Babysitter</p>
+        <small>* Erstattungshöhe variiert je nach Krankenkasse. Enthaltene Anleitung zeigt dir, wie du das Maximum holst.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="s-white" id="pricing">
+  <div class="c">
+    <div style="text-align:center;max-width:580px;margin:0 auto 3rem;" class="rv">
+      <span class="kicker">Deine Investition</span>
+      <h2 class="h-d">Was kostet ein Leben,<br><em>das sich wieder leicht anfühlt?</em></h2>
+    </div>
+
+    <div class="price-card rv">
+      <div class="pc-head">
+        <h3>Mental Load Masterclass</h3>
+        <p>Vollzugriff · Sofortiger Start · Lebenslanger Zugang</p>
+      </div>
+      <div class="pc-body">
+        <div class="cdw">
+          <div class="cd-label">⏳ Sonderpreis läuft ab in</div>
+          <div class="cd-digits">
+            <div class="cd-unit"><span id="cdh">23</span><span>Std.</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span id="cdm">47</span><span>Min.</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span id="cds">12</span><span>Sek.</span></div>
+          </div>
+        </div>
+
+        <div class="price-stack">
+          <div class="p-orig">Normalpreis €197</div>
+          <div class="p-main">€147</div>
+          <div class="p-real">🏥 Nach Kassenerstattung: ab €29,40</div>
+          <div class="p-note">Alle Preise inkl. MwSt. · Einmalzahlung · Keine versteckten Kosten.</div>
+        </div>
+
+        <ul class="pf">
+          <li>5 Video-Module in HD (sofort verfügbar)</li>
+          <li>Mental Load Audit Workbook (PDF)</li>
+          <li>Gesprächsskripte für Partner &amp; Familie</li>
+          <li>Private Community-Mitgliedschaft</li>
+          <li>30-Tage Aktionsplan</li>
+          <li>Toolkit: Apps &amp; Automatisierungen</li>
+          <li>Krankenkasse-Erstattungsanleitung</li>
+          <li>Lebenslanger Zugang inkl. Updates</li>
+        </ul>
+
+        <a href="#" class="btn btn--lg btn--full">
+          Jetzt Zugang sichern — €147
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <p style="text-align:center;font-size:.78rem;color:var(--text-sm);margin-top:1rem;line-height:1.6;">
+          🔒 Sichere Zahlung via Kreditkarte, PayPal, SOFORT.<br>
+          30-Tage Geld-zurück-Garantie. Kein Risiko.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="s-warm">
+  <div class="c" style="max-width:700px;">
+    <div class="gbox rv">
+      <div class="gseal">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="55" fill="#FAF8F4" stroke="#7C1D34" stroke-width="2.5"/>
+          <path d="M60 18L65.5 34.5H83L69.5 44L75 60.5L60 51L45 60.5L50.5 44L37 34.5H54.5Z" fill="none" stroke="#7C1D34" stroke-width="1.5"/>
+          <circle cx="60" cy="60" r="37" fill="none" stroke="#7C1D34" stroke-width="1" stroke-dasharray="3.5,3.5"/>
+          <text x="60" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#7C1D34">30</text>
+          <text x="60" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="6.5" fill="#7C1D34" letter-spacing="1">TAGE GARANTIE</text>
+          <path d="M38 94 Q60 103 82 94" fill="none" stroke="#7C1D34" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div>
+        <h3>30-Tage Geld-zurück-Garantie</h3>
+        <p>Wir tragen das Risiko. Wenn du innerhalb von <strong>30 Tagen</strong> nicht spürst, dass sich etwas verändert hat —
+        kein Drama, keine Fragen, kein bürokratischer Aufwand.
+        Eine E-Mail genügt, und du erhältst den vollen Kaufpreis zurück. <strong>Vollständig. Bedingungslos.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s-white">
+  <div class="c" style="max-width:720px;">
+    <div style="text-align:center;margin-bottom:3rem;" class="rv">
+      <span class="kicker">Häufige Fragen</span>
+      <h2 class="h-d">Wir kennen deine Bedenken —<br><em>hier sind die ehrlichen Antworten</em></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="fi rv">
+        <button class="fi-t">Bekomme ich wirklich Geld von der Krankenkasse zurück? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Ja — dieser Kurs ist offiziell als Präventionskurs nach §20 SGB V zertifiziert. Die meisten gesetzlichen Krankenkassen erstatten 75–100 % der Kurskosten, bis maximal €150 pro Kurs. Du erhältst alle nötigen Unterlagen direkt nach dem Kauf. Wir empfehlen, vorab kurz bei deiner Kasse anzufragen — die Anleitung dafür ist enthalten.</p></div>
+      </div>
+
+      <div class="fi rv">
+        <button class="fi-t">Ich habe kaum Zeit. Wie realistisch ist das wirklich? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Wir haben den Kurs für Mütter mit nahezu null Freizeit entwickelt. Jedes Modul dauert 20–30 Minuten. Du kannst ihn beim Spaziergang, in der Mittagspause oder wenn das Kind schläft konsumieren. Das Ziel: Nach 30 Tagen hast du deutlich mehr Zeit als vorher — das Investment zahlt sich direkt zurück.</p></div>
+      </div>
+
+      <div class="fi rv">
+        <button class="fi-t">Was, wenn mein Partner nicht mitmacht? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Das ist eine der häufigsten Fragen. Modul 3 geht genau darauf ein: Wie du Gespräche führst, sodass dein Partner versteht, was du meinst — ohne Vorwürfe. Viele Teilnehmerinnen zeigen ihrem Partner einfach das Workbook — mit überraschend guten Ergebnissen.</p></div>
+      </div>
+
+      <div class="fi rv">
+        <button class="fi-t">Ich habe schon andere Kurse ausprobiert. Was ist hier anders? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Die meisten Kurse erklären das Problem — wir lösen es. Du bekommst fertige Vorlagen, interaktive Tools und einen tageskonkreten Plan. Außerdem ist dies der einzige deutschsprachige Kurs zu diesem Thema, der als Präventionskurs zertifiziert ist. Und falls es doch nicht passt: 30-Tage Garantie.</p></div>
+      </div>
+
+      <div class="fi rv">
+        <button class="fi-t">Wann kann ich mit dem Kurs anfangen? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Sofort nach dem Kauf erhältst du Zugang zu allen 5 Modulen. Kein fester Starttermin, keine Fristen — du lernst in deinem eigenen Tempo. Der Zugang ist lebenslang.</p></div>
+      </div>
+
+      <div class="fi rv">
+        <button class="fi-t">Ist die Community wirklich aktiv? <span class="fchev">▾</span></button>
+        <div class="fi-b"><p>Unsere WhatsApp-Gruppe wird täglich von Teilnehmerinnen genutzt, die Fragen stellen, Erfahrungen teilen und sich gegenseitig unterstützen. Außerdem gibt es monatliche Live-Sessions. Viele Teilnehmerinnen sagen, die Community sei der wertvollste Teil des Kurses.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta">
+  <div class="c" style="position:relative;z-index:1;">
+    <span class="kicker kicker--lt rv" style="display:block;text-align:center;">Deine Entscheidung</span>
+    <h2 class="h-d h-d--w rv" style="text-align:center;margin-bottom:1.5rem;max-width:660px;margin-left:auto;margin-right:auto;">
+      In einem Monat wirst du<br>zurückblicken und froh sein,<br>
+      <em>dass du heute Ja gesagt hast.</em>
+    </h2>
+
+    <p style="color:#D4B8AF;font-size:1.03rem;text-align:center;max-width:500px;margin:0 auto 2.5rem;line-height:1.78;" class="rv">
+      Oder du machst weiter wie bisher — und bist in einem Monat genauso erschöpft wie heute.
+      Beides ist eine Entscheidung.
+    </p>
+
+    <div style="text-align:center;" class="rv">
+      <a href="#pricing" class="btn btn--lg">
+        Jetzt Zugang sichern — €147
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p style="color:#9C7068;font-size:.8rem;margin-top:1.2rem;">
+        🏥 Ab €29,40 nach Kassenerstattung &nbsp;·&nbsp; 🔒 30-Tage Garantie &nbsp;·&nbsp; ⚡ Sofortiger Zugang
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Mental Load Masterclass. Alle Rechte vorbehalten.</p>
+  <p>
+    <a href="#">Impressum</a> &nbsp;·&nbsp;
+    <a href="#">Datenschutzerklärung</a> &nbsp;·&nbsp;
+    <a href="#">AGB</a> &nbsp;·&nbsp;
+    <a href="#">Widerrufsbelehrung</a>
+  </p>
+  <p style="margin-top:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.65;">
+    Dieser Kurs ist kein medizinisches Produkt und ersetzt keine Therapie oder ärztliche Behandlung.
+    Dargestellte Ergebnisse sind individuelle Erfahrungen und können variieren.
+    Erstattungsfähigkeit durch die Krankenkasse variiert je nach Kasse.
+  </p>
+</footer>
+
+<script>
+  /* SCROLL REVEAL */
+  const els = document.querySelectorAll('.rv');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.07, rootMargin: '0px 0px -35px 0px' });
+  els.forEach(e => io.observe(e));
+
+  /* FAQ */
+  document.querySelectorAll('.fi-t').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.fi');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.fi.open').forEach(i => i.classList.remove('open'));
+      if(!open) item.classList.add('open');
+    });
+  });
+
+  /* MODULE HOVER */
+  document.querySelectorAll('.mod').forEach(m => {
+    m.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.mod.on').forEach(c => c.classList.remove('on'));
+      m.classList.add('on');
+    });
+    m.addEventListener('mouseleave', () => m.classList.remove('on'));
+  });
+
+  /* COUNTDOWN */
+  (function(){
+    const KEY = 'mlm_cd_2026';
+    let target;
+    try { const s = localStorage.getItem(KEY); target = s ? new Date(+s) : null; } catch(e){}
+    if(!target || target <= new Date()) {
+      target = new Date(Date.now() + 23*3600000 + 47*60000 + 12000);
+      try { localStorage.setItem(KEY, target.getTime()); } catch(e){}
+    }
+    function tick(){
+      let diff = Math.max(0, target - new Date());
+      const h = Math.floor(diff/3600000); diff %= 3600000;
+      const m = Math.floor(diff/60000);   diff %= 60000;
+      const s = Math.floor(diff/1000);
+      document.getElementById('cdh').textContent = String(h).padStart(2,'0');
+      document.getElementById('cdm').textContent = String(m).padStart(2,'0');
+      document.getElementById('cds').textContent = String(s).padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+</script>
+</body>
+</html>
